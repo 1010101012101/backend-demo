@@ -41,6 +41,7 @@ sudo apt-get install -y python3 python3-pip nodejs php5 php5-mcrypt
 exit
 ```
 You are now ready for hack night(:
+If you get stuck anywhere, do not hesitate to ask me in slack, or create an issue in this repo.
 
 #[Vagrant](https://www.vagrantup.com/)
 
