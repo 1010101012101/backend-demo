@@ -1,15 +1,16 @@
 #Getting Started
-Using vagrant will allow us to work with each other in the same environment, so that's what we will use.
+Using vagrant will allow us to work with each other in the same environment, so that's what we will use. Getting Started is designed to help you get ready for hack night on the week of the 27th. This will be updated after hack night as a resource for future reference.
+
 ###Installation
-Download and install vagrant from vagrant [downloads](https://www.vagrantup.com/downloads.html) page
+Download and install vagrant from Vagrant [downloads](https://www.vagrantup.com/downloads.html) page
 ###Setup
-Create a folder and navigate to it (this will house your Vagrant file and another folder that your project will actually be in)
+Create a folder and navigate to it (this will house your Vagrantfile and another folder that your project will actually be in)
 
 Run the following command
 ```
 vagrant init ubuntu/trusty64
 ```
-This creates a Vagrantfile that vagrant uses to initialize a virtualbox vm from
+This creates a file called Vagrantfile that vagrant uses to initialize a virtualbox vm
 
 Open Vagrantfile in your favorite text editor
 
@@ -19,18 +20,17 @@ Look for the following line:
 ```
 This allows you to forward a port on the guest(vagrant) to a port of your choosing on the host(your computer)
 
-Add the following line below
+Add the following line below (make sure you have 2 spaces as your indentation)
 ```ruby
   config.vm.network "forwarded_port", guest: 7000, host: 7000
 ```
 ###Start Vagrant box
 Run
-```bash
+```
 vagrant up --provider virtualbox
 ```
-This creates, or boots, a virtualbox vm. It will take some time as it will need to download ubuntu.
 ###Access box
-```bash
+```
 vagrant ssh
 ```
 ##Ubuntu setup
@@ -44,6 +44,16 @@ exit
 ```
 vagrant halt
 ```
+###Clone the repo
+```
+git clone https://github.com/byudevelopers/backend-demo.git
+```
+Or if you prefer ssh:
+```
+git clone git@github.com:byudevelopers/backend-demo.git
+```
+
+
 You are now ready for hack night(:
 If you get stuck anywhere, do not hesitate to ask me in slack, or create an issue in this repo.
 
