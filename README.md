@@ -1,7 +1,7 @@
 #Getting Started
 Using vagrant will allow us to work with each other in the same environment, so that's what we will use.
 ###Installation
-Download and install from vagrant [downloads](https://www.vagrantup.com/downloads.html) page
+Download and install vagrant from vagrant [downloads](https://www.vagrantup.com/downloads.html) page
 ###Setup
 Create a folder and navigate to it (this will house your Vagrant file and another folder that your project will actually be in)
 
