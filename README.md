@@ -1,8 +1,10 @@
 #Getting Started
-Using vagrant will allow us to work with each other in the same environment, so that's what we will use. Getting Started is designed to help you get ready for hack night on the week of the 27th. This will be updated after hack night as a resource for future reference.
+Using vagrant will allow us to work with each other in the same environment, so that's what we will use. Getting Started is designed to help you get ready for hack night on the week of the 27th. This will be updated after hack night as a resource for future reference. This does take a quite a while (especially with slower internet), which is why I'd like for it to be taken care of beforehand. I will go through and explain this process at hack night, although it may be pretty straightforward for you.
 
 ###Installation
 Download and install vagrant from Vagrant [downloads](https://www.vagrantup.com/downloads.html) page
+
+Download and install Virtualbox AND Virtualbox Extensions from the Virtualbox [downloads](https://www.virtualbox.org/wiki/Downloads) page (Virtualbox must be installed before Virtualbox Extensions can be)
 ###Setup
 Create a folder and navigate to it (this will house your Vagrantfile and another folder that your project will actually be in)
 
@@ -24,7 +26,7 @@ Add the following line below (make sure you have 2 spaces as your indentation)
 ```ruby
   config.vm.network "forwarded_port", guest: 7000, host: 7000
 ```
-###Start Vagrant box
+###Start box
 Run
 ```
 vagrant up --provider virtualbox
@@ -36,7 +38,7 @@ vagrant ssh
 ##Ubuntu setup
 ```
 sudo apt-get update
-sudo apt-get install -y build-essential checkinstall libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
+sudo apt-get install -y build-essential checkinstall libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev git
 sudo apt-get install -y python3 python3-pip nodejs php5 php5-mcrypt
 exit
 ```
@@ -44,7 +46,7 @@ exit
 ```
 vagrant halt
 ```
-###Clone the repo
+###Clone this repo
 ```
 git clone https://github.com/byudevelopers/backend-demo.git
 ```
