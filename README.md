@@ -226,6 +226,28 @@ Sources:
 * <https://www.quora.com/What-is-Python-mainly-used-for-in-the-real-world-today>
 
 ##[pip](https://pypi.python.org/pypi/pip)
+pip is the Python Package index. This is a dependency and package manager for python. 
+
+You can install modules with:
+
+```
+pip install <package-name>
+```
+
+pip uses a file typically called requirements.txt to keep track of packages installed. It is best practice to use a virtual environment to keep track of packages that have been installed for a specific project.
+
+Install virtualenv with:
+```
+pip install virtualenv
+```
+
+In your project's directory (or wherever you want to create it) enter in:
+```
+virtualenv venv
+```
+
+You can name your virtualenv anything you'd like, I just always name mine venv.
+
 ##[Flask](http://flask.pocoo.org/)
 
 #[Ruby](https://www.ruby-lang.org/en/)
