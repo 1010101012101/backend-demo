@@ -193,6 +193,38 @@ The most popular NodeJs lightweight, modular web application framework. It is ex
 ##[CodeIgniter](https://www.codeigniter.com/)
 
 #[Python](https://www.python.org/)
+Python is an interpreted, object oriented language. It is really easy to learn and use. It has a large standard library that is easily extendable. Modules can be written in C/C++ for performance. It is also cross-platform and has an extremely dynamic use case. It comes with a built in sandbox (called IDLE) that can be accessed anywhere by typing `python` into the terminal. `python <filename>.py` will start a python app.
+
+What is it good for?
+* Prototyping
+* Data Science
+* Machine Learning
+* Data Mining
+* Web Development
+* Scientific and Numeric Computing
+* Education
+* Desktop Applications
+* GIS
+* CLI/scripting
+* Testing
+* API's
+* ...
+
+What is it not good for?
+* Real time apps
+* CPU Bound aplications
+* Heavy graphic games
+* ...
+
+Sources:
+* <https://www.python.org/doc/essays/blurb/>
+* <https://www.python.org/>
+* <https://wiki.python.org/moin/BeginnersGuide/Overview>
+* <https://www.reddit.com/r/Python/comments/23ap65/what_kind_of_project_would_you_not_use_python_for/>
+* <https://programmers.stackexchange.com/questions/15468/what-are-the-drawbacks-of-python>
+* <https://www.reddit.com/r/Python/comments/1r1yke/what_do_you_use_python_for/>
+* <https://www.quora.com/What-is-Python-mainly-used-for-in-the-real-world-today>
+
 ##[pip](https://pypi.python.org/pypi/pip)
 ##[Flask](http://flask.pocoo.org/)
 
