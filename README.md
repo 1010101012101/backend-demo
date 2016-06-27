@@ -308,6 +308,26 @@ pip freeze > requirements.txt
 ##[Flask](http://flask.pocoo.org/)
 
 #[Ruby](https://www.ruby-lang.org/en/)
+A dynamic, reflective, pure object-oriented, general purpose, open source scripting language written by a Mormon. Its syntax is designed for simplicity and productivity. It is not built for high performance. It is most known for Ruby on Rails (the web framework) which has a fantastic approach to MVC. Just like the other scripting languages, you execute a ruby appliction with `ruby <filename>.rb`
+
+Sources:
+* <https://en.wikipedia.org/wiki/Ruby_(programming_language)>
+* <https://www.ruby-lang.org/en/>
+* <http://ruby.about.com/od/beginningruby/a/WhatIsRuby.htm>
+* <
+
+What is it good for?
+* Text processing
+* Web Development
+* Large Software Systems
+* Provisioning tools
+* CLI tools
+* ...
+
+What is it not good for?
+* Anything that requires performance
+* ...
+
 ##[gem](https://rubygems.org/)
 ##[Sinatra](http://www.sinatrarb.com/)
 
