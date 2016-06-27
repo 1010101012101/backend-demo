@@ -189,6 +189,22 @@ If you do not use these flags, the package is globally available. [Learn more ab
 The most popular NodeJs lightweight, modular web application framework. It is extended with the use of modules and is generally used for secure/rapid development. [Learn more](https://stackoverflow.com/questions/12616153/what-is-express-js)
 
 #[Php](https://secure.php.net/)
+Php is an open-source, easily scalable, general-purpose scripting language. It is widely-used, odds are you will use php at some point in your life (more likely as legacy code). There are a lot of php frameworks. Php was actually never meant to be a programming language, it just kind of turned out that way. That being said, php has fantastic documentation and a ton of integrations. You can run php in a LAMP stack (with an apache server). This has been the development and production environment for php until recently. You can now use php's built in server by running `php -S localhost:8000 -t`
+
+Wordpress is built on Php and makes building a website easier with plugins and the ability to customize the look/feel of your site.
+
+Sources:
+* <https://secure.php.net/manual/en/intro-whatis.php>
+* <https://secure.php.net/manual/en/intro-whatcando.php>
+* <https://en.wikipedia.org/wiki/PHP>
+
+What is it good for?
+* Web Development
+* Web API
+
+What is it not good for?
+* Pretty much everything else
+
 ##[Composer](https://getcomposer.org/)
 ##[CodeIgniter](https://www.codeigniter.com/)
 
@@ -246,7 +262,18 @@ In your project's directory (or wherever you want to create it) enter in:
 virtualenv venv
 ```
 
-You can name your virtualenv anything you'd like, I just always name mine venv.
+You can name your virtualenv anything you'd like, I just always name it venv.
+
+Then, to use the virtualenv type:
+
+```
+source venv/bin/activate
+```
+
+You are now in a virtualenv. Anything you pip install will only exist in this environment. You can then create a requirements.txt file. To save the state of your virtualenv, just type the following in the same directory as requirements.txt
+```
+pip freeze > requirements.txt
+```
 
 ##[Flask](http://flask.pocoo.org/)
 
