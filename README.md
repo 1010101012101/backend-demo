@@ -206,7 +206,37 @@ What is it not good for?
 * Pretty much everything else
 
 ##[Composer](https://getcomposer.org/)
+Php's dependency manager. [Learn more](https://scotch.io/tutorials/a-beginners-guide-to-composer)
+
+Like npm, composer uses a json file to keep track of dependencies (composer.json). It looks like this:
+
+```
+{
+    "name": "username/my_project",
+    "description": "My New Project",
+    "authors": [
+        {
+            "name": "Joe Mama",
+            "email": "mail@mymail.com"
+        }
+    ],
+    "require": {
+    },
+    "require-dev" : {
+    }
+}
+```
+
+Adding packages is as simple as:
+```
+composer install <package-name>
+```
+
+Composer can also install packages directly from github.
+
 ##[CodeIgniter](https://www.codeigniter.com/)
+
+<https://github.com/kenjis/codeigniter-composer-installer>
 
 #[Python](https://www.python.org/)
 Python is an interpreted, object oriented language. It is really easy to learn and use. It has a large standard library that is easily extendable. Modules can be written in C/C++ for performance. It is also cross-platform and has an extremely dynamic use case. It comes with a built in sandbox (called IDLE) that can be accessed anywhere by typing `python` into the terminal. `python <filename>.py` will start a python app.
