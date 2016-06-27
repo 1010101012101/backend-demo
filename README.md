@@ -328,6 +328,11 @@ What is it not good for?
 * ...
 
 ##[gem](https://rubygems.org/)
+RubyGems is Ruby's package manager. To install a ruby package just use:
+
+```
+gem install <package>
+```
 
 ##[Sinatra](http://www.sinatrarb.com/)
 
