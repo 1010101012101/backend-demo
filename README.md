@@ -189,7 +189,7 @@ If you do not use these flags, the package is globally available. [Learn more ab
 The most popular NodeJs lightweight, modular web application framework. It is extended with the use of modules and is generally used for secure/rapid development. [Learn more](https://stackoverflow.com/questions/12616153/what-is-express-js)
 
 #[Php](https://secure.php.net/)
-Php is an open-source, easily scalable, general-purpose scripting language. It is widely-used, odds are you will use php at some point in your life (more likely as legacy code). There are a lot of php frameworks. Php was actually never meant to be a programming language, it just kind of turned out that way. That being said, php has fantastic documentation and a ton of integrations. You can run php in a LAMP stack (with an apache server). This has been the development and production environment for php until recently. You can now use php's built in server by running `php -S localhost:8000 -t`
+Php is an open-source, easily scalable, general-purpose scripting language. It is widely-used, odds are you will use php at some point in your life (more likely as legacy code). There are a lot of php frameworks. Php was actually never meant to be a programming language, it just kind of turned out that way. That being said, php has fantastic documentation and a ton of integrations. Php gets a lot of flack, but it's actually has reasonable performance and is super easy to pick up if you know any C based language. You can run php in a LAMP stack (with an apache server). This has been the development and production environment for php until recently. You can now use php's built in server by running `php -S localhost:8000 -t`
 
 Wordpress is built on Php and makes building a website easier with plugins and the ability to customize the look/feel of your site.
 
@@ -314,7 +314,6 @@ Sources:
 * <https://en.wikipedia.org/wiki/Ruby_(programming_language)>
 * <https://www.ruby-lang.org/en/>
 * <http://ruby.about.com/od/beginningruby/a/WhatIsRuby.htm>
-* <
 
 What is it good for?
 * Text processing
@@ -329,5 +328,6 @@ What is it not good for?
 * ...
 
 ##[gem](https://rubygems.org/)
+
 ##[Sinatra](http://www.sinatrarb.com/)
 
