@@ -63,10 +63,12 @@ git clone git@github.com:byudevelopers/backend-demo.git
 You are now ready for hack night(:
 If you get stuck anywhere, do not hesitate to ask me in slack, or create an issue in this repo.
 
+You can stop here, but are definitely welcome to look futher. I will be going over it at hack-night though.
+
 #[Vagrant](https://www.vagrantup.com/)
 Vagrant creates a desktop environment that can be shared with team members so you are testing within the same environment. 
 
-I like it because it's something that I can completely mess up to figure out what I'm doing, then destroy it and spin up a new vm when I have a better idea of what's going on. Another benifit for me is that I can actually use the same environment that I'll be deploying to. This way I know it will work when I put it into production. That being said, I have never really dived into all that you can do with vagrant. I've also tried to use Docker and failed miserably at figuring it out. 
+I like it because it's something that I can completely mess up to figure out what I'm doing, then destroy it and spin up a new vm when I have a better idea of what's going on. Another benifit for me is that I can actually use the same environment that I'll be deploying to. This way I know it will work when I put it into production. That being said, I have never really dived into all that you can do with vagrant. I've also tried to use Docker and failed miserably at figuring it out, but it seems like vagrant is the right fit for my purposes anyways. 
 
 ##Crash course on vagrant
 ```
