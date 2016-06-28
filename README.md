@@ -332,6 +332,35 @@ What is it not good for?
 ##[gem](https://rubygems.org/)
 RubyGems is Ruby's package manager. To install a ruby package just use:
 
+Ruby dependencies are managed through a gemfile [learn more](http://bundler.io/v1.5/gemfile.html)
+
+Gemfiles look like this:
+```
+source 'https://rubygems.org'
+
+gem 'nokogiri'
+gem 'rails', '3.0.0.beta3'
+gem 'rack',  '>=1.0'
+gem 'thin',  '~>1.1'
+```
+Or this:
+```
+source 'https://rubygems.org'
+
+gem 'wirble', :group => :development
+gem 'debugger', :group => [:development, :test]
+```
+Or this:
+```
+source 'https://rubygems.org'
+
+group :test do
+  gem 'rspec'
+end
+```
+
+Install packages with:
+
 ```
 gem install <package>
 ```
