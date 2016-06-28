@@ -234,7 +234,9 @@ Adding packages is as simple as:
 composer install <package-name>
 ```
 
-Composer can also install packages directly from github. We won't actually be using composer, it's beyond the scope of our needs. It's ony used to install "middleware" which is the php equivalent of packages/modules. We won't actually be using any middleware, so if you are interested in learning composer, it is just as easy as the other package managers.
+Composer can also install packages directly from github. 
+
+We won't actually be using composer, it's beyond the scope of our needs. It's ony used to install "middleware" which is the php equivalent of packages/modules. We won't actually be using any middleware, so if you are interested in learning composer, it is just as easy as the other package managers.
 
 To install Composer on Ubuntu:
 ```
