@@ -66,9 +66,9 @@ If you get stuck anywhere, do not hesitate to ask me in slack, or create an issu
 You can stop here, but are definitely welcome to look futher. I will be going over it at hack-night though.
 
 #[Vagrant](https://www.vagrantup.com/)
-Vagrant creates a desktop environment that can be shared with team members so you are testing within the same environment. 
+Vagrant creates a desktop environment that can be shared with team members so you are testing within the same environment.
 
-I like it because it's something that I can completely mess up to figure out what I'm doing, then destroy it and spin up a new vm when I have a better idea of what's going on. Another benifit for me is that I can actually use the same environment that I'll be deploying to. This way I know it will work when I put it into production. That being said, I have never really dived into all that you can do with vagrant. I've also tried to use Docker and failed miserably at figuring it out, but it seems like vagrant is the right fit for my purposes anyways. 
+I like it because it's something that I can completely mess up to figure out what I'm doing, then destroy it and spin up a new vm when I have a better idea of what's going on. Another benifit for me is that I can actually use the same environment that I'll be deploying to. This way I know it will work when I put it into production. That being said, I have never really dived into all that you can do with vagrant. I've also tried to use Docker and failed miserably at figuring it out, but it seems like vagrant is the right fit for my purposes anyways.
 
 ##Crash course on vagrant
 ```
@@ -98,6 +98,8 @@ Shuts down your box
 ```
 vagrant destroy
 ```
+
+TODO- add sharing
 
 Shuts down and deletes your vm
 
@@ -135,12 +137,12 @@ What is it not good for?
 * Basic CRUD/HTML apps (Well, its just not better than anything else)
 * Teams that do not have JS experience
 
-Sources (in no particular order): 
-* <http://www.tutorialspoint.com/nodejs/nodejs_introduction.htm> 
-* <http://stackoverflow.com/questions/4531649/what-exactly-is-node-js-used-for> 
-* <https://www.toptal.com/nodejs/why-the-hell-would-i-use-node-js> 
-* <https://medium.com/@ivanguardado/node-js-the-bad-parts-b4b9d23ef7e2#.ec6wr6god> 
-* <https://www.sitepoint.com/node-js-is-the-new-black/> 
+Sources (in no particular order):
+* <http://www.tutorialspoint.com/nodejs/nodejs_introduction.htm>
+* <http://stackoverflow.com/questions/4531649/what-exactly-is-node-js-used-for>
+* <https://www.toptal.com/nodejs/why-the-hell-would-i-use-node-js>
+* <https://medium.com/@ivanguardado/node-js-the-bad-parts-b4b9d23ef7e2#.ec6wr6god>
+* <https://www.sitepoint.com/node-js-is-the-new-black/>
 * <http://stackoverflow.com/questions/1884724/what-is-node-js>
 
 ##[npm](https://www.npmjs.com/)
@@ -190,10 +192,68 @@ If you do not use these flags, the package is globally available. [Learn more ab
 ##[Express](http://expressjs.com/)
 The most popular NodeJs lightweight, modular web application framework. It is extended with the use of modules and is generally used for secure/rapid development. [Learn more](https://stackoverflow.com/questions/12616153/what-is-express-js)
 
+##Basic NodeJs/Express app:
+Access your box
+```
+vagrant up  # if not running
+vagrant ssh
+```
+
+First, we need to install Node and npm.
+```
+sudo apt-get install node
+sudo apt-get install npm
+```
+It is always a good idea to read the [documentation](http://expressjs.com/en/api.html)
+
+There is actually a 'better' way of doing this: nvm (Node Version Manager). I'm going to keep things simple and not use it, but know that it is recommended.
+
+Lets initialize our node project
+```
+npm init
+```
+
+Press enter until the prompt no longer asks for information (this can all be filled out later). You should see a package.json file in the directory. If not, try it again.
+
+Install Express next
+
+```
+npm install --save express
+```
+
+This will create a folder called node_modules that your dependencies will be downloaded to. Express will also be added to the dependencies in package.json.
+
+You are now ready to get started!
+
+In the app.js file, type the following:
+
+```javascript
+// Load express
+var express = require('express');
+
+// Create an express app
+var app = express();
+
+// Create a HTTP GET route for the root url(/)
+//  -- This is what will appear when you navigate to the base url
+//  (ie. <https://www.google.com>, <http://localhost:7000> for us)
+app.get('/', function(request, response) {
+    response.send("Hello world")
+})
+
+// Set up the app to listen on port 700
+app.listen(7000, function() {
+    // Print something so you know the app is running
+    console.log("App is running on port 7000")
+})
+```
+
+Type `nodejs app.js` into the terminal and you should see `App is running on port 7000` in the terminal. Navigate to <http://localhost:7000> in your browser. If all is well, Hello world will appear in your browser.
+
 #[Php](https://secure.php.net/)
 Php is an open-source, easily scalable, general-purpose scripting language. It is widely-used, odds are you will use php at some point in your life (more likely as legacy code). There are a lot of php frameworks. Php was actually never meant to be a programming language, it just kind of turned out that way. That being said, php has fantastic documentation and a ton of integrations. Php gets a lot of flack, but it's actually has reasonable performance and is super easy to pick up if you know any C based language. You can run php in a LAMP stack (with an apache server). This has been the development and production environment for php until recently. You can now use php's built in server by running `php -S localhost:8000 -t .`
 
-Wordpress is built on Php and makes building a website easier with plugins and the ability to customize the look/feel of your site.
+Wordpress and Drupal are built on Php and makes building a website easier with plugins and the ability to customize the look/feel of your site.
 
 Sources:
 * <https://secure.php.net/manual/en/intro-whatis.php>
@@ -234,7 +294,7 @@ Adding packages is as simple as:
 composer install <package-name>
 ```
 
-Composer can also install packages directly from github. 
+Composer can also install packages directly from github.
 
 We won't actually be using composer, it's beyond the scope of our needs. It's ony used to install "middleware" which is the php equivalent of packages/modules. We won't actually be using any middleware, so if you are interested in learning composer, it is just as easy as the other package managers.
 
@@ -285,7 +345,7 @@ Sources:
 * <https://www.quora.com/What-is-Python-mainly-used-for-in-the-real-world-today>
 
 ##[pip](https://pypi.python.org/pypi/pip)
-pip is the Python Package index. This is a dependency and package manager for python. 
+pip is the Python Package index. This is a dependency and package manager for python.
 
 You can install modules with:
 
@@ -377,4 +437,3 @@ gem install <package>
 ```
 
 ##[Sinatra](http://www.sinatrarb.com/)
-
