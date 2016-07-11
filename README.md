@@ -364,7 +364,7 @@ If you now navigate to localhost:7000/hi you will see your new view!
 CodeIgniter is unlike any of the other frameworks here. While it is much more opinionated and robust, it is still a light framework as far as php frameworks go. [Slim](http://www.slimframework.com/) and [Lumen](https://lumen.laravel.com/) are more similar to Express. You only get an extendable micro-framework that does very little heavy lifting. Middleware can also be added to handle things like sessions and authentication, but you must add them yourself, and come up with your own code structure (MVC/MVP/etc)
 
 #[Python](https://www.python.org/)
-Python is an interpreted, object oriented language. It is really easy to learn and use, it's also my favorite(: It has a large standard library that is easily extendable. Modules can be written in C/C++ for performance. It is also cross-platform and has an extremely dynamic use case. It comes with a built in sandbox (called IDLE) that can be accessed anywhere by typing `python` into the terminal. `python <filename>.py` will start a python app.
+Python is an interpreted, object oriented language. It is really easy to learn and use, it's also my favorite(: It has a large standard library that is easily extendable. Modules can be written in C/C++ for performance (this is the same for Node/ruby, just more commonly used in python). It is also cross-platform and has an extremely dynamic use case. It comes with a built in sandbox (called IDLE) that can be accessed anywhere by typing `python` into the terminal. `python <filename>.py` will start a python app.
 
 What is it good for?
 * Prototyping
