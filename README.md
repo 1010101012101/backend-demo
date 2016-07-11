@@ -28,13 +28,13 @@ Add the following line below (make sure you have 2 spaces as your indentation)
 
 ###Start vm
 Run
-```bash
+```
 vagrant up --provider virtualbox
 ```
-This creates, or boots, a virtualbox vm. It will take some time as it will need to download ubuntu.
+This creates, or boots, a Virtualbox vm. It will take some time as it will need to download ubuntu.
 
 ###Access vm
-```bash
+```
 vagrant ssh
 ```
 
@@ -63,12 +63,12 @@ git clone git@github.com:byudevelopers/backend-demo.git
 You are now ready for hack night(:
 If you get stuck anywhere, do not hesitate to ask me in slack, or create an issue in this repo.
 
-You can stop here, but are definitely welcome to look futher. I will be going over it at hack-night though.
+You can stop here, but are definitely welcome to look further. I will be going over it at hack-night though.
 
 #[Vagrant](https://www.vagrantup.com/)
 Vagrant creates a desktop environment that can be shared with team members so you are testing within the same environment.
 
-I like it because it's something that I can completely mess up to figure out what I'm doing, then destroy it and spin up a new vm when I have a better idea of what's going on. Another benifit for me is that I can actually use the same environment that I'll be deploying to. This way I know it will work when I put it into production. That being said, I have never really dived into all that you can do with vagrant. I've also tried to use Docker and failed miserably at figuring it out, but it seems like vagrant is the right fit for my purposes anyways.
+I like it because it's something that I can completely mess up to figure out what I'm doing, then destroy it and spin up a new vm when I have a better idea of what's going on. Another benefit for me is that I can actually use the same environment that I'll be deploying to. This way I know it will work when I put it into production. That being said, I have never really dived into all that you can do with vagrant. I've also tried to use Docker and failed miserably at figuring it out, but it seems like vagrant is the right fit for my purposes anyways.
 
 ##Crash course on vagrant
 ```
@@ -251,7 +251,7 @@ app.listen(7000, function() {
 Type `nodejs app.js` into the terminal and you should see `App is running on port 7000` in the terminal. Navigate to <http://localhost:7000> in your browser. If all is well, Hello world will appear in your browser.
 
 #[Php](https://secure.php.net/)
-Php is an open-source, easily scalable, general-purpose scripting language. It is widely-used, odds are you will use php at some point in your life (more likely as legacy code). There are a lot of php frameworks. Php was actually never meant to be a programming language, it just kind of turned out that way. That being said, php has fantastic documentation and a ton of integrations. Php gets a lot of flack, but it's actually has reasonable performance and is super easy to pick up if you know any C based language. You can run php in a LAMP stack (with an apache server). This has been the development and production environment for php until recently. You can now use php's built in server by running `php -S localhost:8000 -t .`
+Php is an open-source, easily scalable, general-purpose scripting language. It is widely-used, odds are you will use php at some point in your life (more likely as legacy code). There are a lot of php frameworks. Php was actually never meant to be a programming language, it just kind of turned out that way. That being said, php has fantastic documentation and a ton of integrations. Php gets a lot of flack, but it's actually has reasonable performance and is super easy to pick up if you know any C based language. You can run php in a LAMP stack (with an apache server). This has been the development and production environment for php until recently. You can now use php's built in server by running `php -S localhost:7000 -t .`
 
 Wordpress and Drupal are built on Php and makes building a website easier with plugins and the ability to customize the look/feel of your site.
 
@@ -272,7 +272,7 @@ Php's dependency manager. [Learn more](https://scotch.io/tutorials/a-beginners-g
 
 Like npm, composer uses a json file to keep track of dependencies (composer.json). It looks like this:
 
-```
+```json
 {
     "name": "username/my_project",
     "description": "My New Project",
@@ -309,7 +309,59 @@ Composer dependencies are installed in a generated folder called vendor
 
 ##[CodeIgniter](https://www.codeigniter.com/)
 
-<https://github.com/kenjis/codeigniter-composer-installer>
+Download CodeIgniter from [here](https://www.codeigniter.com/download)
+
+We only really need index.php, the system folder, and the application folder to make a functioning app. From within the CodeIgniter folder, start the app by running `php -S localhost:7000 -t .`
+
+This auto-loads the index file. Within the index file, all settings are generated. The application and system folders are also added to the app. The system folder contains core functionality of CodeIgniter and the application folder is the actual application. 
+
+Within the application folder your have several subfolders. The folders that are of most interest to us are: config, controllers, and views. 
+
+Routes are setup in application > config > routes.php. 
+
+```php
+$route['default_controller'] = 'welcome';
+```
+This is a route. default_controller indicates that this is the default/root uri (localhost:7000). For the localhost:7000/hi url, just add a new entry:
+
+```php
+$route['hi'] = 'hi';
+```
+
+By adding a route to the associative array, you are basically saying: when someone goes the the /hi uri (`$route['hi']`), then I want you to use the hi controller. Navigate to application > controllers > Welcome.php to view the default controller `welcome`. You can create the hi view by creating a Hi.php file and adding the following:
+
+```php
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Hi extends CI_Controller {
+
+  // This is the function that CodeIgniter calls when a user accesses the route
+  public function index() 
+  {
+    $this->load->view('hi'); // Load the hi view
+  }
+}
+```
+
+
+Navigate to application > views welcome_message.php to see the default route's view. Php is supposed to be the fastest templating engine, although I'm not sure I believe that. What you are seeing is a php staticly rendered page. Our page is going to be much simpler then that. Add hi.php to views and enter in the following:
+
+```php
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<?php echo 'hi'; ?>
+</body>
+</html>
+```
+
+If you now navigate to localhost:7000/hi you will see your new view!
+
+CodeIgniter is unlike any of the other frameworks here. While it is much more opinionated and robust, it is still a light framework as far as php frameworks go. [Slim](http://www.slimframework.com/) and [Lumen](https://lumen.laravel.com/) are more similar to Express. You only get an extendable micro-framework that does very little heavy lifting. Middleware can also be added to handle things like sessions and authentication, but you must add them yourself, and come up with your own code structure (MVC/MVP/etc)
 
 #[Python](https://www.python.org/)
 Python is an interpreted, object oriented language. It is really easy to learn and use. It has a large standard library that is easily extendable. Modules can be written in C/C++ for performance. It is also cross-platform and has an extremely dynamic use case. It comes with a built in sandbox (called IDLE) that can be accessed anywhere by typing `python` into the terminal. `python <filename>.py` will start a python app.
@@ -381,7 +433,7 @@ pip freeze > requirements.txt
 ##[Flask](http://flask.pocoo.org/)
 
 #[Ruby](https://www.ruby-lang.org/en/)
-A dynamic, reflective, pure object-oriented, general purpose, open source scripting language written by a Mormon. Its syntax is designed for simplicity and productivity. It is not built for high performance. It is most known for Ruby on Rails (the web framework) which has a fantastic approach to MVC. Just like the other scripting languages, you execute a ruby appliction with `ruby <filename>.rb`
+A dynamic, reflective, pure object-oriented, general purpose, open source scripting language written by a Mormon. Its syntax is designed for simplicity and productivity. It is not built for high performance. It is most known for Ruby on Rails (the web framework) which has a fantastic approach to MVC. Just like the other scripting languages, you execute a ruby application with `ruby <filename>.rb`
 
 Sources:
 * <https://en.wikipedia.org/wiki/Ruby_(programming_language)>
